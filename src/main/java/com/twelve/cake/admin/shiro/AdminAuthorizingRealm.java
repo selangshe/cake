@@ -48,7 +48,7 @@ public class AdminAuthorizingRealm extends AuthorizingRealm {
         String[] strings = StrSpliter.splitToArray(admin.getRoleIds(), ',', 0, true, true);
         int[] array = Arrays.asList(strings).stream().mapToInt(Integer::parseInt).toArray();
         Set<String> roles = roleService.queryByIds(array);
-        Set<String> permissions = permissionService.queryByRoleIds(roleIds);
+        Set<String> permissions = permissionService.queryByRoleIds(array);
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         info.setRoles(roles);
         info.setStringPermissions(permissions);

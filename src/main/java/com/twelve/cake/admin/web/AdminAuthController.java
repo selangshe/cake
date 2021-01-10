@@ -133,7 +133,7 @@ public class AdminAuthController {
         String[] strings = StrSpliter.splitToArray(roleIds, ',', 0, true, true);
         int[] array = Arrays.asList(strings).stream().mapToInt(Integer::parseInt).toArray();
         Set<String> roles = roleService.queryByIds(array);
-        Set<String> permissions = permissionService.queryByRoleIds(roleIds);
+        Set<String> permissions = permissionService.queryByRoleIds(array);
         data.put("roles", roles);
         // NOTE
         // 这里需要转换perms结构，因为对于前端而已API形式的权限更容易理解
