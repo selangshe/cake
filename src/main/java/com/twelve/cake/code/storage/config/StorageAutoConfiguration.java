@@ -1,10 +1,8 @@
 package com.twelve.cake.code.storage.config;
 
-import com.twelve.cake.code.storage.AliyunStorage;
 import com.twelve.cake.code.storage.LocalStorage;
 import com.twelve.cake.code.storage.QiniuStorage;
 import com.twelve.cake.code.storage.StorageService;
-import com.twelve.cake.code.storage.TencentStorage;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,9 +25,9 @@ public class StorageAutoConfiguration {
         if (active.equals("local")) {
             storageService.setStorage(localStorage());
         } else if (active.equals("aliyun")) {
-            storageService.setStorage(aliyunStorage());
+            //storageService.setStorage(aliyunStorage());
         } else if (active.equals("tencent")) {
-            storageService.setStorage(tencentStorage());
+           // storageService.setStorage(tencentStorage());
         } else if (active.equals("qiniu")) {
             storageService.setStorage(qiniuStorage());
         } else {
@@ -48,7 +46,7 @@ public class StorageAutoConfiguration {
         return localStorage;
     }
 
-    @Bean
+   /* @Bean
     public AliyunStorage aliyunStorage() {
         AliyunStorage aliyunStorage = new AliyunStorage();
         StorageProperties.Aliyun aliyun = this.properties.getAliyun();
@@ -57,9 +55,9 @@ public class StorageAutoConfiguration {
         aliyunStorage.setBucketName(aliyun.getBucketName());
         aliyunStorage.setEndpoint(aliyun.getEndpoint());
         return aliyunStorage;
-    }
+    }*/
 
-    @Bean
+    /*@Bean
     public TencentStorage tencentStorage() {
         TencentStorage tencentStorage = new TencentStorage();
         StorageProperties.Tencent tencent = this.properties.getTencent();
@@ -68,7 +66,7 @@ public class StorageAutoConfiguration {
         tencentStorage.setBucketName(tencent.getBucketName());
         tencentStorage.setRegion(tencent.getRegion());
         return tencentStorage;
-    }
+    }*/
 
     @Bean
     public QiniuStorage qiniuStorage() {

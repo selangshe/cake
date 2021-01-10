@@ -1,6 +1,10 @@
 package com.twelve.cake.admin.utils;
 
+import com.twelve.cake.admin.annotation.RequiresPermissionsDesc;
 import com.twelve.cake.admin.vo.PermVo;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Controller;

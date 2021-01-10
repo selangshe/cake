@@ -1,6 +1,8 @@
 package com.twelve.cake.admin.config;
 
-
+import com.twelve.cake.admin.shiro.AdminWebSessionManager;
+import org.apache.shiro.mgt.SecurityManager;
+import com.twelve.cake.admin.shiro.AdminAuthorizingRealm;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
