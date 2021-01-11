@@ -2,7 +2,7 @@ package com.twelve.cake.code.storage.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "litemall.storage")
+@ConfigurationProperties(prefix = "twelve.storage")
 public class StorageProperties {
     private String active;
     private Local local;

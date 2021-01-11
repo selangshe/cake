@@ -8,6 +8,8 @@ spring:
     username: root
     password: a3721221
     driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
   #spring.data.redis.repositories.enabled=false
   devtools:
     restart:
@@ -32,6 +34,11 @@ mybatis-plus:
   type-aliases-package: com.example.demo.pojo
 
 
+
+
+
+twelve:
+
   # \u5BF9\u8C61\u5B58\u50A8\u914D\u7F6E
   storage:
     # \u5F53\u524D\u5DE5\u4F5C\u7684\u5BF9\u8C61\u5B58\u50A8\u6A21\u5F0F\uFF0C\u5206\u522B\u662Flocal\u3001aliyun\u3001tencent\u3001qiniu
@@ -41,15 +48,13 @@ mybatis-plus:
       storagePath: storage
       # \u8FD9\u4E2A\u5730\u65B9\u5E94\u8BE5\u662Fwx\u6A21\u5757\u7684WxStorageController\u7684fetch\u65B9\u6CD5\u5BF9\u5E94\u7684\u5730\u5740
       address: http://localhost:8080/wx/storage/fetch/
-  # \u4E03\u725B\u4E91\u5B58\u50A8
+    # \u4E03\u725B\u4E91\u5B58\u50A8
     qiniu:
       domain: http://img.twelvecake.top # \u8BBF\u95EE\u57DF\u540D(\u9ED8\u8BA4\u4F7F\u7528\u4E03\u725B\u4E91\u6D4B\u8BD5\u57DF\u540D)
       accessKey: pwNVM4N4jGMjwQ7i6pC-usFIbLRc8P3DztZPxG2E # \u516C\u94A5
       secretKey: 3ZmPeLrno3sdsifOQVVwx8vZhn_ewEWk2GCiLRw9 # \u79C1\u94A5
       bucketName: xiayunshang  #\u5B58\u50A8\u7A7A\u95F4\u540D\u79F0
 
-
-twelve:
   # \u5F00\u53D1\u8005\u5E94\u8BE5\u8BBE\u7F6E\u6210\u81EA\u5DF1\u7684wx\u76F8\u5173\u4FE1\u606F
   wx:
     app-id: wxa5b486c6b918ecfb
